@@ -1,0 +1,8 @@
+Gps modülünüzü taktıktan sonra yapmanız gereken işlemler
+ls -l /dev/ttyTHS*  #komutu ile modulü görüp görmediğini öğrenin
+eğer  /dev/ttyTHS1 ile /dev/ttyTHS  #çıkıyorsa gps çalışıyor.
+sudo apt-get install gpsd gpsd-clients python-gps  #paketini yükleyin.
+/dev/ttyTHS1 yazdığınızda permission denied hatası çıkıyorsa  sudo chmod 777 /dev/ttyTHS1  yazın.
+stty -F /dev/ttyTHS1 komutunu girdikten sonra sudo cat /dev/ttyTHS1 yazarak gps verilerinizi ekrana bastırın.
+gps verilerini hem anlamlı bir şekidle terminale yazdırmak hem de bu verileri json formatına çevirmek için 
+klasördeki jsonformat.py dosyasını kullanın.
